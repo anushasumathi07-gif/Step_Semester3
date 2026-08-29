@@ -10,7 +10,7 @@ public class RockPaperScissors {
             return "Player Wins";
         return "Computer Wins";
     }
-paer    public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
         String[] moves = {"Rock", "Paper", "Scissors"};
