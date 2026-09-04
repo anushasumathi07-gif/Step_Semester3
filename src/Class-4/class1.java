@@ -1,0 +1,54 @@
+class class1 {
+
+    String title;
+    String isbn;
+    boolean catalogued;
+
+    // Constructor for a book with ISBN
+    public class1(String title, String isbn) {
+        this.title = title;
+        this.isbn = isbn;
+        this.catalogued = true;
+    }
+
+    // Constructor for a book without ISBN
+    public class1(String title) {
+        this(title, "PENDING");
+    }
+
+    // Print book status
+    public void printStatus() {
+        System.out.println(title + " | " + isbn
+                + " | Catalogued: " + catalogued);
+    }
+
+    public static void main(String[] args) {
+
+        String[] titles = {
+            "Clean Code",
+            "Untitled Draft",
+            "1984",
+            "Notes"
+        };
+
+        String[] isbns = {
+            "978-0132350884",
+            "",
+            "9780451524935",
+            ""
+        };
+
+        for (int i = 0; i < titles.length; i++) {
+
+            class1 book;
+
+            if (isbns[i].isEmpty()) {
+                book = new class1(titles[i]);
+            } else {
+                book = new class1(titles[i], isbns[i]);
+            }
+
+            book.printStatus();
+        }
+    }
+}
